@@ -1,0 +1,14 @@
+{% extends 'clients/base.html' %}
+
+{% block title %}Confirm Deletion - ClientSphere{% endblock %}
+
+{% block content %}
+    <h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete the client: <strong>{{ client.name }}</strong>?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-action btn-delete">Confirm Delete</button>
+        <a href="{% url 'dashboard' %}" style="margin-left: 10px;">Cancel</a>
+    </form>
+{% endblock %}

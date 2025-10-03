@@ -1,0 +1,12 @@
+{% extends 'clients/base.html' %}
+
+{% block title %}Add Client - ClientSphere{% endblock %}
+
+{% block content %}
+    <h1>Add New Client</h1>
+    <form method="post" class="client-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-add">Save Client</button>
+    </form>
+{% endblock %}

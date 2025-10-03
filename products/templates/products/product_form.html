@@ -1,0 +1,10 @@
+{% extends 'clients/base.html' %}
+{% block title %}{% if product %}Update Product{% else %}Add Product{% endif %}{% endblock %}
+{% block content %}
+    <h1>{% if product %}Update {{ product.name }}{% else %}Add New Product{% endif %}</h1>
+    <form method="post" class="client-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-add">Save Product</button>
+    </form>
+{% endblock %}

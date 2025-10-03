@@ -1,0 +1,12 @@
+{% extends 'clients/base.html' %}
+
+{% block title %}Update Client - ClientSphere{% endblock %}
+
+{% block content %}
+    <h1>Update {{ client.name }}</h1>
+    <form method="post" class="client-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-edit" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">Update Client</button>
+    </form>
+{% endblock %}
